@@ -1,0 +1,13 @@
+name: ReadMore
+id:   ReadMore
+version: 0.12
+author_name: SHINCHI, Takahiro
+author_link: http://shinchi.tumblr.com/
+description: <__trans phrase="The plugin provides &quot;read more&quot; function to an Entry/WebPage.">
+l10n_class: ReadMore::L10N 
+callbacks: 
+    build_page: 
+        - 
+            handler: ReadMore::Callbacks::_cb_build_page
+            priority: 5
+
