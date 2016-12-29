@@ -2,11 +2,11 @@ jQuery(function($) {
 
     if ( typeof ReadMore !== "undefined" && ReadMore.use_charcount ) {
         var wraptext = $( '#readmore-wraptext' );
-        var children = wraptext.children();
+        var contents = wraptext.contents();
         var content_length = 0;
         var visible_index = 0;
-        for ( var i = 0; i < children.length; i++ ) {
-            content_length += jQuery( children[i] ).html().length;
+        for ( var i = 0; i < contents.length; i++ ) {
+            content_length += contents[i].nodeType !== 3 ? jQuery( contents[i] ).html().length : jQuery( contents[i] ).text().length;
             if ( content_length > ReadMore.charcount ) {
                 visible_index = i + 1;
                 break;
@@ -26,12 +26,12 @@ jQuery(function($) {
             readmore_html = '';
             var j = 0;
             for ( j = 0; j < visible_index; j++ ) {
-                visible_html += jQuery( children[j] ).html();
+                visible_html += contents[j].nodeType !== 3 ? jQuery( contents[j] ).html() : jQuery( contents[j] ).text();
             }
-            for ( ; j < children.length; j++ ) {
-                readmore_html += jQuery( children[j] ).html();
+            for ( ; j < contents.length; j++ ) {
+                readmore_html += contents[j].nodeType !== 3 ? jQuery( contents[j] ).html() : jQuery( contents[j] ).text();
             }
-            if ( children.length > visible_index ) {
+            if ( contents.length > visible_index ) {
                 wraptext.html( visible_html + '<div class="readmore-link"><a href="#readmore">続きを読む</a></div>' + '<div id="readmore" class="readmore-area">' + readmore_html + '</div>' );
 
             }
