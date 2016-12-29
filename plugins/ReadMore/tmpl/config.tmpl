@@ -1,0 +1,17 @@
+<mtapp:setting
+    id="readmore_use_charcount"
+    label="<__trans phrase="UseCharCount">"
+    hint="<__trans phrase="'read more' link is inserted  in the number of characters specified of an Entry/WebPage.">"
+    show_hint="1">
+<ul>
+<li><input type="checkbox" value="1" name="readmore_use_charcount" id="readmore_use_charcount"<mt:if name="readmore_use_charcount"> checked="checked"</mt:if> /></li>
+</ul>
+</mtapp:setting>
+<mtapp:setting
+    id="readmore_charcount"
+    label="<__trans phrase="CharCount">">
+<ul>
+<li><input type="text" class="text short" value="<mt:var name="readmore_charcount" escape="html">" name="readmore_charcount" id="readmore_charcount" /></li>
+</ul>
+<p></p>
+</mtapp:setting>
