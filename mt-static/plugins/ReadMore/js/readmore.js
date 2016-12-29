@@ -17,7 +17,6 @@ jQuery(function($) {
         var visible_html = html.substr( 0, ReadMore.charcount );
         var readmore_html = html.substr( ReadMore.charcount );
 
-        console.log( checkHTML( visible_html ) );
         if ( checkHTML( visible_html ) ) {
             if ( readmore_html.length > 0 ) {
                 wraptext.html( visible_html + '<div class="readmore-link"><a href="#readmore">続きを読む</a></div>' + '<div id="readmore" class="readmore-area">' + readmore_html + '</div>' );
