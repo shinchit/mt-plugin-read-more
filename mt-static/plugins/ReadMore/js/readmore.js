@@ -1,6 +1,6 @@
 jQuery(function($) {
 
-    if ( ReadMore.use_charcount ) {
+    if ( typeof ReadMore !== "undefined" && ReadMore.use_charcount ) {
         var wraptext = $( '#readmore-wraptext' );
         var children = wraptext.children();
         var content_length = 0;
